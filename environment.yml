@@ -1,0 +1,9 @@
+name: fake-chrom-gff
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - python>=3.9
+  - biopython
+  - diamond>=2.0
+  - blast

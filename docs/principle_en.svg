@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="800" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="480" y="38" text-anchor="middle" font-size="19" font-weight="bold" fill="#222">Schematic: borrowing chromosome coordinates for a relative with only Trinity transcripts (no genome)</text>
+
+  <!-- ===== ① Reference genome ===== -->
+  <rect x="40" y="60" width="420" height="240" rx="10" fill="#F8F9FA" stroke="#DDDDDD"/>
+  <text x="60" y="88" font-size="15" font-weight="bold" fill="#333">① Reference genome (chromosome-level)</text>
+
+  <text x="60" y="144" font-size="12" fill="#555">LG1</text>
+  <rect x="110" y="134" width="320" height="16" fill="#EDEDED" stroke="#CCCCCC"/>
+  <path d="M120,104 h26 l10,15 l-10,15 h-26 z" fill="#E15759"/>
+  <path d="M175,104 h26 l10,15 l-10,15 h-26 z" fill="#4E79A7"/>
+  <path d="M230,104 h26 l10,15 l-10,15 h-26 z" fill="#F28E2B"/>
+  <path d="M285,104 h26 l10,15 l-10,15 h-26 z" fill="#59A14F"/>
+  <path d="M340,104 h26 l10,15 l-10,15 h-26 z" fill="#EDC948"/>
+  <g font-size="10" fill="#888" text-anchor="middle">
+    <text x="138" y="98">AG001</text><text x="193" y="98">AG002</text>
+    <text x="248" y="98">AG003</text><text x="303" y="98">AG004</text>
+    <text x="358" y="98">AG005</text>
+    <text x="138" y="170">1.2M</text><text x="193" y="170">2.8M</text>
+    <text x="248" y="170">4.1M</text><text x="303" y="170">5.9M</text>
+    <text x="358" y="170">7.3M</text>
+  </g>
+
+  <text x="60" y="234" font-size="12" fill="#555">LG2</text>
+  <rect x="110" y="224" width="200" height="16" fill="#EDEDED" stroke="#CCCCCC"/>
+  <path d="M140,194 h26 l10,15 l-10,15 h-26 z" fill="#B07AA1"/>
+  <path d="M200,194 h26 l10,15 l-10,15 h-26 z" fill="#76B7B2"/>
+  <g font-size="10" fill="#888" text-anchor="middle">
+    <text x="158" y="188">AG006</text><text x="218" y="188">AG007</text>
+    <text x="158" y="260">3.3M</text><text x="218" y="260">6.0M</text>
+  </g>
+  <text x="60" y="286" font-size="11" fill="#999">Real chromosome positions known (colors distinguish genes)</text>
+
+  <!-- ===== ② Trinity transcripts ===== -->
+  <rect x="500" y="60" width="420" height="240" rx="10" fill="#F8F9FA" stroke="#DDDDDD"/>
+  <text x="520" y="88" font-size="15" font-weight="bold" fill="#333">② Relative (Trinity transcripts)</text>
+
+  <!-- column 1 -->
+  <g font-size="9.5" fill="#999">
+    <text x="520" y="131">comp101_c0_seq1</text>
+    <text x="520" y="161">comp101_c0_seq2</text>
+    <text x="520" y="191">comp102_c0_seq1</text>
+    <text x="520" y="221">comp103_c0_seq1</text>
+    <text x="520" y="251">comp104_c0_seq1</text>
+  </g>
+  <path d="M615,118 h22 l8,9 l-8,9 h-22 z" fill="#4E79A7"/>
+  <path d="M615,148 h22 l8,9 l-8,9 h-22 z" fill="#A9C4DE" stroke="#4E79A7" stroke-width="1" stroke-dasharray="3,2"/>
+  <path d="M615,178 h22 l8,9 l-8,9 h-22 z" fill="#E15759"/>
+  <path d="M615,208 h22 l8,9 l-8,9 h-22 z" fill="#9B9B9B"/>
+  <path d="M615,238 h22 l8,9 l-8,9 h-22 z" fill="#F28E2B"/>
+  <g font-size="10" fill="#666">
+    <text x="658" y="131">t1</text>
+    <text x="658" y="161">t1</text>
+    <text x="658" y="191">t2</text>
+    <text x="658" y="221">t3</text>
+    <text x="658" y="251">t4</text>
+  </g>
+
+  <!-- column 2 -->
+  <g font-size="9.5" fill="#999">
+    <text x="700" y="131">comp105_c0_seq1</text>
+    <text x="700" y="161">comp106_c0_seq1</text>
+    <text x="700" y="191">comp107_c0_seq1</text>
+    <text x="700" y="221">comp108_c0_seq1</text>
+  </g>
+  <path d="M795,118 h22 l8,9 l-8,9 h-22 z" fill="#59A14F"/>
+  <path d="M795,148 h22 l8,9 l-8,9 h-22 z" fill="#EDC948"/>
+  <path d="M795,178 h22 l8,9 l-8,9 h-22 z" fill="#E15759"/>
+  <path d="M795,208 h22 l8,9 l-8,9 h-22 z" fill="#B07AA1"/>
+  <g font-size="10" fill="#666">
+    <text x="838" y="131">t6</text>
+    <text x="838" y="161">t8</text>
+    <text x="838" y="191">t7</text>
+    <text x="838" y="221">t5</text>
+  </g>
+  <text x="520" y="284" font-size="10.5" fill="#999">Isoforms (comp101_c0_seq1/2) → merged, longest kept; grey = no hit</text>
+
+  <!-- ===== ③ Alignment ===== -->
+  <line x1="250" y1="300" x2="250" y2="322" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="710" y1="300" x2="710" y2="322" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="40" y="326" width="880" height="86" rx="10" fill="#EEF3FB" stroke="#C9D8EE"/>
+  <text x="60" y="352" font-size="15" font-weight="bold" fill="#333">③ Protein alignment: relative PEP × reference PEP (diamond / BLASTP)</text>
+  <text x="60" y="374" font-size="12" fill="#555">Best hit per gene (optional --rbh reciprocal filtering, --min-pident quality filter)</text>
+  <text x="60" y="396" font-size="12" fill="#555">t2→AG001　t1→AG002　t4→AG003　t6→AG004　t8→AG005　t5→AG006　t7→AG001</text>
+
+  <!-- reordering mini-diagram -->
+  <g>
+    <text x="742" y="342" font-size="10" fill="#888">Target gene order</text>
+    <rect x="742" y="348" width="14" height="14" fill="#4E79A7"/>
+    <rect x="770" y="348" width="14" height="14" fill="#E15759"/>
+    <rect x="798" y="348" width="14" height="14" fill="#F28E2B"/>
+    <rect x="826" y="348" width="14" height="14" fill="#59A14F"/>
+    <rect x="854" y="348" width="14" height="14" fill="#EDC948"/>
+    <text x="742" y="390" font-size="10" fill="#888">Reordered by reference</text>
+    <rect x="742" y="366" width="14" height="14" fill="#E15759"/>
+    <rect x="770" y="366" width="14" height="14" fill="#4E79A7"/>
+    <rect x="798" y="366" width="14" height="14" fill="#F28E2B"/>
+    <rect x="826" y="366" width="14" height="14" fill="#59A14F"/>
+    <rect x="854" y="366" width="14" height="14" fill="#EDC948"/>
+    <line x1="749" y1="362" x2="777" y2="366" stroke="#999" stroke-width="1"/>
+    <line x1="777" y1="362" x2="749" y2="366" stroke="#999" stroke-width="1"/>
+  </g>
+
+  <!-- ===== ④ Fake chromosomes ===== -->
+  <line x1="480" y1="412" x2="480" y2="434" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="40" y="438" width="880" height="272" rx="10" fill="#F8F9FA" stroke="#DDDDDD"/>
+  <text x="60" y="464" font-size="15" font-weight="bold" fill="#333">④ Build fake chromosomes: inherit reference coordinates, ordered by reference position</text>
+
+  <text x="60" y="524" font-size="12" fill="#555">LG1</text>
+  <rect x="110" y="514" width="560" height="16" fill="#EDEDED" stroke="#CCCCCC"/>
+  <path d="M120,484 h26 l10,15 l-10,15 h-26 z" fill="#E15759"/>
+  <path d="M180,484 h26 l10,15 l-10,15 h-26 z" fill="#4E79A7"/>
+  <path d="M240,484 h26 l10,15 l-10,15 h-26 z" fill="#F28E2B"/>
+  <path d="M300,484 h26 l10,15 l-10,15 h-26 z" fill="#59A14F"/>
+  <path d="M360,484 h26 l10,15 l-10,15 h-26 z" fill="#EDC948"/>
+  <path d="M420,484 h26 l10,15 l-10,15 h-26 z" fill="#E15759"/>
+  <line x1="427" y1="514" x2="439" y2="484" stroke="#fff" stroke-width="2.5"/>
+  <line x1="437" y1="514" x2="449" y2="484" stroke="#fff" stroke-width="2.5"/>
+  <line x1="447" y1="514" x2="456" y2="488" stroke="#fff" stroke-width="2.5"/>
+  <g font-size="10" fill="#888" text-anchor="middle">
+    <text x="138" y="478">t2</text><text x="198" y="478">t1</text>
+    <text x="258" y="478">t4</text><text x="318" y="478">t6</text>
+    <text x="378" y="478">t8</text><text x="438" y="478">t7</text>
+    <text x="138" y="554">1.2M</text><text x="198" y="554">2.8M</text>
+    <text x="258" y="554">4.1M</text><text x="318" y="554">5.9M</text>
+    <text x="378" y="554">7.3M</text><text x="438" y="554">7.3M+Δ</text>
+  </g>
+  <text x="500" y="500" font-size="11" fill="#999">t7 and t2 hit the same gene → duplicate</text>
+  <text x="500" y="514" font-size="11" fill="#999">coordinates, shifted right (--shift-duplicates)</text>
+
+  <text x="60" y="586" font-size="12" fill="#555">LG2</text>
+  <rect x="110" y="576" width="240" height="16" fill="#EDEDED" stroke="#CCCCCC"/>
+  <path d="M150,546 h26 l10,15 l-10,15 h-26 z" fill="#B07AA1"/>
+  <g font-size="10" fill="#888" text-anchor="middle">
+    <text x="168" y="540">t5</text><text x="168" y="612">3.3M</text>
+  </g>
+
+  <text x="60" y="648" font-size="12" fill="#555">ChrUn</text>
+  <rect x="110" y="638" width="420" height="16" fill="none" stroke="#AAAAAA" stroke-dasharray="5,4"/>
+  <path d="M150,608 h26 l10,15 l-10,15 h-26 z" fill="#9B9B9B"/>
+  <g font-size="10" fill="#888" text-anchor="middle">
+    <text x="168" y="602">t3</text>
+  </g>
+  <text x="560" y="651" font-size="11" fill="#999">Unmatched genes placed sequentially (1 kb interval)</text>
+
+  <!-- legend -->
+  <rect x="60" y="680" width="16" height="16" fill="#E15759"/>
+  <text x="82" y="692" font-size="12" fill="#555">Matched ref gene (color = reference gene)</text>
+  <rect x="350" y="680" width="16" height="16" fill="#9B9B9B"/>
+  <text x="372" y="692" font-size="12" fill="#555">Unmatched → ChrUn</text>
+  <rect x="540" y="680" width="16" height="16" fill="#E15759"/>
+  <line x1="543" y1="696" x2="549" y2="680" stroke="#fff" stroke-width="2"/>
+  <line x1="549" y1="696" x2="555" y2="680" stroke="#fff" stroke-width="2"/>
+  <text x="562" y="692" font-size="12" fill="#555">Duplicate coords → shifted</text>
+
+  <!-- outputs -->
+  <g font-size="13" fill="#333" text-anchor="middle">
+    <rect x="150" y="726" width="150" height="30" rx="15" fill="#EEF3FB" stroke="#C9D8EE"/>
+    <text x="225" y="746">fake.gff3</text>
+    <rect x="320" y="726" width="150" height="30" rx="15" fill="#EEF3FB" stroke="#C9D8EE"/>
+    <text x="395" y="746">fake.cds.fa</text>
+    <rect x="490" y="726" width="150" height="30" rx="15" fill="#EEF3FB" stroke="#C9D8EE"/>
+    <text x="565" y="746">fake.pep.fa</text>
+    <rect x="660" y="726" width="170" height="30" rx="15" fill="#EEF3FB" stroke="#C9D8EE"/>
+    <text x="745" y="746">gene_mapping.tsv</text>
+  </g>
+  <text x="480" y="780" text-anchor="middle" font-size="11" fill="#AAAAAA">Note: fake coordinates reflect only the relative order of orthologs in the reference genome, not real positions</text>
+</svg>
