@@ -2,6 +2,8 @@
 
 Generate a "fake chromosome" GFF for a relative species that has **only CDS/PEP sequences (e.g. a Trinity de novo transcriptome assembly) and no genome assembly**, using a chromosome-level reference genome.
 
+> For the transcriptome assembly step, check out [trinity-rust](https://github.com/shengxinzhuan/trinity-rust) — a Rust port of the Trinity v2.15.2 main assembly pipeline: **~3x faster** than the original (54 → 17 min end-to-end), **~4x lower peak memory** (83 → 21 GB), and **zero-hassle full pipeline** (single static binary, no Perl/Java toolchain, automatic multi-k, deduplicated deliverables and checkpoint-resume out of the box). Its default `*.Trinity.principal.fa` (one representative transcript per gene) is a drop-in input for this tool.
+
 Typical use case: tools like MCScanX / WGDI / synteny-plotting pipelines require a GFF with coordinates. When the target species has only transcriptome or annotation sequences, this script "borrows" a coordinate framework from the chromosome-level assembly of a relative, so that genes are arranged in the chromosomal order of the reference genome.
 
 [中文版 README](README.md)
@@ -59,8 +61,10 @@ python3 fake_chrom_gff.py \
 When the target species has no genome and only RNA-seq data, the standard input chain is as follows (the script automatically recognizes Trinity+TransDecoder-style IDs: `compXXX_c0_seq1` for CDS, `compXXX_c0_seq1.p1` for PEP):
 
 ```bash
-# 1. Assemble with trinity-rust (the default principal.fa is already deduplicated,
-#    one representative transcript per gene)
+# 1. Assemble with trinity-rust (https://github.com/shengxinzhuan/trinity-rust)
+#    ~3x faster and ~4x lower memory than original Trinity,
+#    single-binary zero-hassle pipeline; default principal.fa is already
+#    deduplicated (one representative transcript per gene)
 trinity-cli --seqType fq --left reads.left.fq.gz --right reads.right.fq.gz \
     --CPU 16 --max_memory 64G --output sample
 #    → sample.Trinity.principal.fa
@@ -150,3 +154,13 @@ python3 fake_chrom_gff.py --ref-gff tests/data/ref.gff3 \
     --outdir tests/out_modeA
 python3 tests/check_test.py tests/out_modeA     # [PASS]
 ```
+
+## See also
+
+- **[trinity-rust](https://github.com/shengxinzhuan/trinity-rust)** — a Rust port of the
+  Trinity RNA-Seq de novo assembler (v2.15.2 main pipeline). Highlights: **faster** (~1/3
+  the end-to-end runtime of the original), **leaner** (~1/4 the peak memory), and a
+  **zero-hassle pipeline** (single static binary with no Perl/Java toolchain; automatic
+  multi-k assembly, deduplicated deliverables and checkpoint-resume by default — one
+  command from reads to results). Its default `*.Trinity.principal.fa` (one representative
+  transcript per gene) feeds directly into this tool's `--cds/--pep` workflow.

@@ -2,6 +2,11 @@
 
 为一个**只有 CDS/PEP（如 Trinity de novo 转录组组装）、没有基因组组装**的近缘种，基于染色体级别的参考基因组生成一份"假染色体" GFF。
 
+> 转录组组装推荐用 [trinity-rust](https://github.com/shengxinzhuan/trinity-rust)——Rust 移植的
+> Trinity v2.15.2 主装配管线：**比原版快约 3 倍**（端到端 54→17 min）、**峰值内存仅约 1/4**
+> （83→21 GB）、**单静态二进制零依赖、一条命令跑完全流程**（自动多 k、默认去冗余交付、断点续跑）。
+> 默认产物 `*.Trinity.principal.fa` 已每基因一条代表转录本，正好作为本工具的输入。
+
 典型用途：MCScanX / WGDI / 共线性绘图等工具要求输入带坐标的 GFF；当目标物种只有转录组或注释序列时，可以用近缘种的染色体框架"借"一套坐标，让基因按参考基因组的染色体顺序排列。
 
 [English README](README_English.md)
@@ -60,7 +65,9 @@ python3 fake_chrom_gff.py \
 `compXXX_c0_seq1`（CDS）/ `compXXX_c0_seq1.p1`（PEP）这类 Trinity+TransDecoder ID）：
 
 ```bash
-# 1. trinity-rust 组装（默认产物 principal.fa 已去冗余，每基因一条代表转录本）
+# 1. 用 trinity-rust 组装（https://github.com/shengxinzhuan/trinity-rust）
+#    比原版 Trinity 更快、更省内存，单二进制傻瓜化全流程；
+#    默认产物 principal.fa 已去冗余，每基因一条代表转录本
 trinity-cli --seqType fq --left reads.left.fq.gz --right reads.right.fq.gz \
     --CPU 16 --max_memory 64G --output sample
 #    → sample.Trinity.principal.fa
@@ -157,3 +164,11 @@ python3 fake_chrom_gff.py --ref-gff tests/data/ref.gff3 \
     --outdir tests/out_modeA
 python3 tests/check_test.py tests/out_modeA     # [PASS]
 ```
+
+## 相关项目
+
+- **[trinity-rust](https://github.com/shengxinzhuan/trinity-rust)** — Rust 移植的 Trinity
+  RNA-Seq de novo 组装器（v2.15.2 主装配管线），优点：**速度更快**（端到端约为原版的
+  1/3 耗时）、**资源更少**（峰值内存约为原版的 1/4）、**全流程傻瓜化**（单静态二进制，
+  无需 Perl/Java 工具链，自动多 k 组装 + 默认去冗余交付 + 断点续跑，一条命令出结果）。
+  默认产物 `*.Trinity.principal.fa` 每基因一条代表转录本，可直接接本工具的 `--cds/--pep` 流程。
